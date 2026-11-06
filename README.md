@@ -6,7 +6,7 @@ A portfolio of end-to-end data science projects by **Mariama Sanyang**.
 
 | Project | Description | Key Result |
 |---------|-------------|------------|
-| [Credit Card Fraud Detection](projects/credit-card-fraud-detection/README.md) | Classify fraudulent transactions from 284,807 anonymised credit card records; full detection pipeline with threshold tuning and cost analysis | PR-AUC: see project README |
+| [Credit Card Fraud Detection](credit-card-fraud-detection/README.md) | Classify fraudulent transactions from 284,807 anonymised credit card records; full detection pipeline with threshold tuning and cost analysis | XGBoost test PR-AUC: **0.8687** |
 
 ---
 

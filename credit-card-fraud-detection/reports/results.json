@@ -1,0 +1,77 @@
+{
+  "dummy": {
+    "accuracy": 0.9982795547909132,
+    "recall": 0.0
+  },
+  "logistic": {
+    "cv_pr_auc_mean": 0.7759358414224495,
+    "cv_pr_auc_std": 0.07381848764377723,
+    "test_pr_auc": 0.7282165662291001,
+    "test_roc_auc": 0.9721511511892321,
+    "test_precision": 0.0625,
+    "test_recall": 0.9183673469387755,
+    "test_f1": 0.11703511053315994,
+    "test_tp": 90,
+    "test_fp": 1350,
+    "test_tn": 55514,
+    "test_fn": 8,
+    "test_threshold": 0.5
+  },
+  "xgboost": {
+    "cv_pr_auc_mean": 0.8641094353444322,
+    "cv_pr_auc_std": 0.07604466136504137,
+    "best_params": {
+      "n_estimators": 770,
+      "learning_rate": 0.19476582436567746,
+      "max_depth": 5,
+      "subsample": 0.8277253135578759,
+      "colsample_bytree": 0.9046761193577473,
+      "min_child_weight": 5,
+      "gamma": 0.8633282139418966,
+      "reg_alpha": 0.058533652012942826,
+      "reg_lambda": 0.021617258514779417
+    },
+    "chosen_threshold": 0.8176513314247131,
+    "test_pr_auc": 0.8686981910908249,
+    "test_roc_auc": 0.9742857645309109,
+    "test_precision": 0.9090909090909091,
+    "test_recall": 0.8163265306122449,
+    "test_f1": 0.8602150537634409,
+    "test_tp": 80,
+    "test_fp": 8,
+    "test_tn": 56856,
+    "test_fn": 18,
+    "test_threshold": 0.8176513314247131
+  },
+  "operating_points": {
+    "max_f1": {
+      "name": "Max F1",
+      "threshold": 0.8176513314247131,
+      "precision": 0.927710843373494,
+      "recall": 0.7777777777777778,
+      "f1": 0.8461538456577105
+    },
+    "recall_90": {
+      "name": "Recall \u2265 90%",
+      "threshold": 0.00017934318748302758,
+      "precision": 0.03493788819875776,
+      "recall": 0.9090909090909091,
+      "f1": 0.06728971955488891
+    },
+    "prec_90": {
+      "name": "Precision \u2265 90%",
+      "threshold": 0.738457441329956,
+      "precision": 0.9058823529411765,
+      "recall": 0.7777777777777778,
+      "f1": 0.836956521242025
+    },
+    "min_cost": {
+      "name": "Min cost (missed fraud = Amount, review = \u20ac10.0)",
+      "threshold": 0.9694733023643494,
+      "precision": 0.9605263157894737,
+      "recall": 0.7373737373737373,
+      "f1": 0.834285713794351,
+      "total_cost": 3177.37
+    }
+  }
+}

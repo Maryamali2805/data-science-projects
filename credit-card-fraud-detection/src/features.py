@@ -51,8 +51,7 @@ def xgb_pipeline(feature_names, **xgb_params):
         colsample_bytree=0.8,
         scale_pos_weight=577,   # rough class ratio; will be overridden by tuning
         eval_metric="aucpr",
-        early_stopping_rounds=30,
-        use_label_encoder=False,
+        # early_stopping_rounds omitted: requires eval_set at fit time, breaks CV
         random_state=RANDOM_SEED,
         n_jobs=-1,
     )

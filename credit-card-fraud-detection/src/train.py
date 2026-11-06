@@ -87,7 +87,7 @@ def tune_xgb(X_train, y_train, X_val, y_val, n_trials=50):
 
 def train_xgb(X_train, y_train, X_val, y_val, best_params):
     pos_weight = int((y_train == 0).sum() / (y_train == 1).sum())
-    params = {**best_params, "scale_pos_weight": pos_weight}
+    params = {**best_params, "scale_pos_weight": pos_weight, "early_stopping_rounds": 30}
     pipe = xgb_pipeline(list(X_train.columns), **params)
 
     # Fit preprocessor first so we can pass eval_set to XGBoost
