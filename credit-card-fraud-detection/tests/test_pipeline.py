@@ -36,7 +36,7 @@ class TestSplit:
         self.X_train, self.X_val, self.X_test, self.y_train, self.y_val, self.y_test = self.splits
 
     def test_no_index_overlap(self):
-        """Train, val, test indices are disjoint — no leakage."""
+        """Train, val, test indices are disjoint. No leakage."""
         idx_train = set(self.X_train.index)
         idx_val   = set(self.X_val.index)
         idx_test  = set(self.X_test.index)

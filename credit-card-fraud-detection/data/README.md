@@ -10,7 +10,7 @@ This directory is **not tracked by git** (see root `.gitignore`).
 
 ## How to download
 
-### Option 1 — Kaggle CLI (recommended)
+### Option 1 - Kaggle CLI (recommended)
 
 ```bash
 pip install kaggle
@@ -18,7 +18,7 @@ pip install kaggle
 python -m src.download_data
 ```
 
-### Option 2 — Manual
+### Option 2 - Manual
 
 1. Go to https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud
 2. Click **Download** (requires free Kaggle account)

@@ -1,4 +1,4 @@
-"""Metric helpers — same interface as credit-card-fraud-detection/src/evaluate.py."""
+"""Metric helpers. Same interface as credit-card-fraud-detection/src/evaluate.py."""
 import numpy as np
 from sklearn.metrics import (
     average_precision_score,

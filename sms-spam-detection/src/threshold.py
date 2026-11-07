@@ -7,9 +7,9 @@ For spam, the cost asymmetry is different from fraud:
 So high precision is usually preferred over high recall in spam filters.
 
 Operating points:
-  max_f1       — balanced F1 (practical default)
-  prec_99      — precision ≥ 99%  (never lose a real message)
-  recall_95    — recall ≥ 95%     (catch almost all spam)
+  max_f1       - balanced F1 (practical default)
+  prec_99      - precision >= 99%  (never lose a real message)
+  recall_95    - recall >= 95%     (catch almost all spam)
 """
 import numpy as np
 from sklearn.metrics import precision_recall_curve, f1_score

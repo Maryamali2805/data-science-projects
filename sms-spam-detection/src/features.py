@@ -1,10 +1,10 @@
 """sklearn Pipelines for SMS spam classification.
 
 Each pipeline consists of:
-  1. TextCleaner  — a stateless FunctionTransformer that applies one of the
+  1. TextCleaner  - a stateless FunctionTransformer that applies one of the
                     cleaning strategies from preprocess.py to the raw text column
-  2. Vectorizer   — CountVectorizer or TfidfVectorizer (fit ONLY on training data)
-  3. Classifier   — MultinomialNB, LogisticRegression, or CalibratedLinearSVC
+  2. Vectorizer   - CountVectorizer or TfidfVectorizer (fit ONLY on training data)
+  3. Classifier   - MultinomialNB, LogisticRegression, or CalibratedLinearSVC
 
 The vectoriser is always fitted inside the pipeline so no test/val tokens
 ever influence the vocabulary or IDF weights.

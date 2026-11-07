@@ -11,7 +11,7 @@ interactive predict CLI.
 
 Given 5,572 SMS messages labelled ham or spam (~13% spam), classify each message.
 A model that always predicts "ham" scores **87.33% accuracy** while catching
-zero spam — the same accuracy paradox as imbalanced tabular data. This project
+zero spam, the same accuracy paradox as imbalanced tabular data. This project
 uses PR-AUC as the primary metric and demonstrates the full text-classification
 workflow including preprocessing comparison and threshold tuning.
 
@@ -21,9 +21,9 @@ workflow including preprocessing comparison and threshold tuning.
 
 | Property | Value |
 |---|---|
-| **Source** | [Kaggle — SMS Spam Collection (UCI)](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset) |
+| **Source** | [Kaggle - SMS Spam Collection (UCI)](https://www.kaggle.com/datasets/uciml/sms-spam-collection-dataset) |
 | **Raw rows** | 5,572 messages |
-| **Duplicates removed** | 403 (before splitting — prevents leakage) |
+| **Duplicates removed** | 403 (before splitting; prevents leakage) |
 | **Unique rows used** | 5,169 |
 | **Spam rate (after dedup)** | 653 / 5,169 = **12.63%** |
 | **Encoding** | latin-1 |
@@ -36,7 +36,7 @@ workflow including preprocessing comparison and threshold tuning.
 ## Approach
 
 - **Stratified 60/20/20 train/val/test split** (seed=42). Duplicates removed **before** splitting so no identical message can appear in both train and test.
-- **sklearn Pipelines** fit the TF-IDF vectoriser only on training data inside each cross-validation fold — no vocabulary leakage.
+- **sklearn Pipelines** fit the TF-IDF vectoriser only on training data inside each cross-validation fold; no vocabulary leakage.
 - **Preprocessing comparison**: minimal cleaning (lowercase only) vs heavy cleaning (digit normalisation + punctuation stripping + stopword removal + Porter stemming). Grid search showed minimal cleaning wins: TF-IDF's IDF weighting already acts as a soft stopword filter, and stemming can merge discriminative spam tokens.
 - **Feature search**: grid over `{minimal, heavy}` × `{(1,1), (1,2)}` ngrams × `{10k, 30k, None}` features × `{0.01, 0.1, 1.0}` NB alpha (5-fold CV PR-AUC).
 - **NB cost asymmetry**: in spam filtering, a false positive (real message sent to spam) is usually worse than a false negative (spam gets through), so high precision is prioritised.
@@ -50,7 +50,7 @@ workflow including preprocessing comparison and threshold tuning.
 
 | Model | CV PR-AUC | Test PR-AUC | Precision | Recall | F1 |
 |---|---|---|---|---|---|
-| DummyClassifier (always ham) | — | — | — | 0.0000 | — |
+| DummyClassifier (always ham) | - | - | - | 0.0000 | - |
 | Logistic Regression | 0.9739 ± 0.0040 | 0.9636 | 0.9516 | 0.9008 | 0.9255 |
 | Linear SVM (calibrated) | 0.9780 ± 0.0046 | 0.9710 | 0.9520 | 0.9084 | 0.9297 |
 | **Naive Bayes (tuned)** | **0.9714 ± 0.0113** | **0.9755** | **0.9528** | **0.9237** | **0.9380** |
@@ -139,7 +139,7 @@ Results JSON saved to `reports/results.json`. Figures saved to `reports/figures/
 ```
 sms-spam-detection/
 ├── data/
-│   ├── raw/              # gitignored — place spam.csv here
+│   ├── raw/              # gitignored - place spam.csv here
 │   └── README.md         # data source and download instructions
 ├── notebooks/
 │   └── spam_detection.ipynb
@@ -170,10 +170,10 @@ sms-spam-detection/
 ## Limitations & Next Steps
 
 **Limitations**
-1. Small dataset (~5k messages) from early 2000s UK/Singapore mobile SMS — modern spam patterns differ significantly.
+1. Small dataset (~5k messages) from early 2000s UK/Singapore mobile SMS; modern spam patterns differ significantly.
 2. English-only; SMS dialect varies by region.
 3. Many spam messages are near-duplicates from the same campaign; the 403 removed duplicates may mask true generalisation performance.
-4. No temporal validation — messages from the same sender could appear in both train and test.
+4. No temporal validation: messages from the same sender could appear in both train and test.
 5. `lt` / `gt` tokens (XML encoding artefacts) rank as top ham signals, suggesting dataset encoding issues that a production pipeline would need to handle.
 
 **Next steps**

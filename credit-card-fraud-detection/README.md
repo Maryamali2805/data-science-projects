@@ -6,7 +6,7 @@ A complete fraud-detection pipeline on the classic Kaggle dataset: stratified sp
 
 ## Problem
 
-Given 284,807 anonymised European credit card transactions made over two days (September 2013), identify which 492 are fraudulent (0.17% fraud rate). The severe class imbalance makes accuracy useless — a model that always predicts "not fraud" scores **99.83% accuracy while catching zero fraud**. This project uses PR-AUC as the primary metric and demonstrates the full detection workflow including threshold tuning.
+Given 284,807 anonymised European credit card transactions made over two days (September 2013), identify which 492 are fraudulent (0.17% fraud rate). The severe class imbalance makes accuracy useless: a model that always predicts "not fraud" scores **99.83% accuracy while catching zero fraud**. This project uses PR-AUC as the primary metric and demonstrates the full detection workflow including threshold tuning.
 
 ---
 
@@ -14,7 +14,7 @@ Given 284,807 anonymised European credit card transactions made over two days (S
 
 | Property | Value |
 |---|---|
-| **Source** | [Kaggle — Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) |
+| **Source** | [Kaggle - Credit Card Fraud Detection](https://www.kaggle.com/datasets/mlg-ulb/creditcardfraud) |
 | **Size** | 284,807 transactions × 31 columns (~144 MB) |
 | **Fraud rate** | 492 / 284,807 = **0.1727%** |
 | **Features** | `Time`, `Amount`, `V1–V28` (PCA-anonymised), `Class` (0=legit, 1=fraud) |
@@ -25,7 +25,7 @@ Given 284,807 anonymised European credit card transactions made over two days (S
 
 ## Approach
 
-- **Stratified 60/20/20 train/val/test split** (seed=42). Test set is touched once — at the very end.
+- **Stratified 60/20/20 train/val/test split** (seed=42). Test set is touched once, at the very end.
 - **sklearn Pipelines** fit `StandardScaler` only on training data inside each fold, preventing any leakage.
 - **Imbalance handling** via `class_weight="balanced"` (Logistic Regression) and `scale_pos_weight` (XGBoost). No synthetic over-sampling applied before splitting.
 - **Model selection** via stratified 5-fold CV scored on PR-AUC on the training set.
@@ -41,7 +41,7 @@ Given 284,807 anonymised European credit card transactions made over two days (S
 
 | Model | CV PR-AUC | Test PR-AUC | Test ROC-AUC | Precision | Recall | F1 |
 |---|---|---|---|---|---|---|
-| DummyClassifier (always "not fraud") | — | — | — | — | 0.0000 | — |
+| DummyClassifier (always "not fraud") | - | - | - | - | 0.0000 | - |
 | Logistic Regression (balanced) | 0.7759 ± 0.0738 | 0.7282 | 0.9722 | 0.0625 | 0.9184 | 0.1170 |
 | **XGBoost (Optuna-tuned)** | **0.8641 ± 0.0760** | **0.8687** | **0.9743** | **0.9091** | **0.8163** | **0.8602** |
 
@@ -117,7 +117,7 @@ Results JSON saved to `reports/results.json`. Figures saved to `reports/figures/
 ```
 credit-card-fraud-detection/
 ├── data/
-│   ├── raw/              # gitignored — place creditcard.csv here
+│   ├── raw/              # gitignored - place creditcard.csv here
 │   └── README.md         # data source and download instructions
 ├── notebooks/
 │   └── fraud_detection.ipynb
@@ -146,7 +146,7 @@ credit-card-fraud-detection/
 ## Limitations & Next Steps
 
 **Limitations**
-1. V1–V28 are PCA-transformed and anonymised — feature importance can't be translated to business variables.
+1. V1–V28 are PCA-transformed and anonymised; feature importance can't be translated to business variables.
 2. Only 48 hours of data: no concept-drift testing, no seasonal patterns.
 3. Single dataset, one geographic region (European cards).
 4. No temporal validation (a stricter split would use day 1 for training, day 2 for testing).

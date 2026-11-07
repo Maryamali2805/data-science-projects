@@ -15,7 +15,7 @@ heavy
     "winner", "wins" to a common root so sparse spam vocabulary is denser.
 
 Why keep currency symbols and !, ?
-    Real spam frequently uses "FREE!", "£150 prize", "txt STOP" — these are
+    Real spam frequently uses "FREE!", "£150 prize", "txt STOP" - these are
     strong discriminative signals that disappear under aggressive punctuation
     removal. We therefore only strip punctuation that carries no signal
     (commas, brackets, etc.) while retaining the high-value characters.
@@ -51,7 +51,7 @@ _DIGIT_RE   = re.compile(r"\d+")
 
 
 def clean_minimal(text: str) -> str:
-    """Lowercase only — let the vectorizer do the rest."""
+    """Lowercase only. The vectorizer handles the rest."""
     return text.lower()
 
 

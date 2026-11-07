@@ -1,4 +1,4 @@
-"""Central configuration — single source of truth for all reproducibility knobs."""
+"""Central configuration: single source of truth for all reproducibility knobs."""
 from pathlib import Path
 
 # ── Paths ────────────────────────────────────────────────────────────────────

@@ -38,7 +38,7 @@ def main():
         sys.exit(1)
 
     try:
-        import kaggle  # noqa: F401 — imported after credentials check
+        import kaggle  # noqa: F401  # imported after credentials check
     except ImportError:
         print(
             "ERROR: kaggle package not installed. Run: pip install kaggle",
