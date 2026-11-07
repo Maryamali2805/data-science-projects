@@ -1,0 +1,12 @@
+pandas==2.2.3
+numpy==1.26.4
+scikit-learn==1.5.2
+nltk==3.9.1
+matplotlib==3.9.4
+seaborn==0.13.2
+notebook==7.3.2
+ipykernel==6.29.5
+nbconvert==7.16.6
+joblib==1.4.2
+pytest==8.3.4
+kaggle==1.6.17
