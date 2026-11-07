@@ -1,0 +1,294 @@
+{
+  "dataset": {
+    "total_rows": 5169,
+    "n_duplicates_removed": 403,
+    "spam_rate": 0.12633004449603405
+  },
+  "dummy": {
+    "accuracy": 0.8733075435203095,
+    "recall": 0.0
+  },
+  "naive_bayes": {
+    "best_params": {
+      "cleaning": "minimal",
+      "ngram_range": [
+        1,
+        2
+      ],
+      "max_features": 10000,
+      "alpha": 0.1
+    },
+    "cv_pr_auc_mean": 0.971438817188228,
+    "cv_pr_auc_std": 0.011329629304939737,
+    "chosen_threshold": 0.22426158477137326,
+    "test_pr_auc": 0.9754896911427845,
+    "test_roc_auc": 0.9923241442857988,
+    "test_precision": 0.952755905511811,
+    "test_recall": 0.9236641221374046,
+    "test_f1": 0.937984496124031,
+    "test_tp": 121,
+    "test_fp": 6,
+    "test_tn": 897,
+    "test_fn": 10,
+    "test_threshold": 0.22426158477137326
+  },
+  "logistic_regression": {
+    "cv_pr_auc_mean": 0.9738782075588949,
+    "cv_pr_auc_std": 0.003993920360137538,
+    "test_pr_auc": 0.963554240200568,
+    "test_roc_auc": 0.9901346656184221,
+    "test_precision": 0.9516129032258065,
+    "test_recall": 0.9007633587786259,
+    "test_f1": 0.9254901960784314,
+    "test_tp": 118,
+    "test_fp": 6,
+    "test_tn": 897,
+    "test_fn": 13,
+    "test_threshold": 0.5
+  },
+  "linear_svm": {
+    "cv_pr_auc_mean": 0.9779591801948875,
+    "cv_pr_auc_std": 0.004568358088333705,
+    "test_pr_auc": 0.971013595856821,
+    "test_roc_auc": 0.9931821832230141,
+    "test_precision": 0.952,
+    "test_recall": 0.9083969465648855,
+    "test_f1": 0.9296875,
+    "test_tp": 119,
+    "test_fp": 6,
+    "test_tn": 897,
+    "test_fn": 12,
+    "test_threshold": 0.5
+  },
+  "operating_points": {
+    "max_f1": {
+      "name": "Max F1",
+      "threshold": 0.22426158477137326,
+      "precision": 0.9661016949152542,
+      "recall": 0.8702290076335878,
+      "f1": 0.9156626506024097
+    },
+    "prec_99": {
+      "name": "Precision \u2265 99%",
+      "threshold": 0.5589544263822251,
+      "precision": 0.9907407407407407,
+      "recall": 0.816793893129771,
+      "f1": 0.8953974895397491
+    },
+    "recall_95": {
+      "name": "Recall \u2265 95%",
+      "threshold": 0.03966236108848037,
+      "precision": 0.7142857142857143,
+      "recall": 0.9541984732824428,
+      "f1": 0.8169934640522876
+    }
+  },
+  "top_spam_words": [
+    [
+      "claim",
+      5.68327248950042
+    ],
+    [
+      "prize",
+      5.613442379058479
+    ],
+    [
+      "have won",
+      5.137906230732728
+    ],
+    [
+      "your mobile",
+      5.092409572569997
+    ],
+    [
+      "18",
+      5.089331594040116
+    ],
+    [
+      "150p",
+      5.061466078093623
+    ],
+    [
+      "to claim",
+      5.011989473372124
+    ],
+    [
+      "500",
+      5.0094084279307145
+    ],
+    [
+      "guaranteed",
+      4.988344407373588
+    ],
+    [
+      "co",
+      4.978075776136855
+    ],
+    [
+      "co uk",
+      4.978075776136855
+    ],
+    [
+      "nokia",
+      4.978031251812826
+    ],
+    [
+      "1000",
+      4.968826019133533
+    ],
+    [
+      "16",
+      4.967455585969341
+    ],
+    [
+      "awarded",
+      4.83666897903658
+    ],
+    [
+      "ringtone",
+      4.823508466055396
+    ],
+    [
+      "000",
+      4.822038287501899
+    ],
+    [
+      "tones",
+      4.7819197902811545
+    ],
+    [
+      "code",
+      4.744471822233888
+    ],
+    [
+      "cs",
+      4.738238441103205
+    ]
+  ],
+  "top_ham_words": [
+    [
+      "lt",
+      4.154969156831572
+    ],
+    [
+      "gt",
+      4.14138896478068
+    ],
+    [
+      "lor",
+      4.119033924858469
+    ],
+    [
+      "lt gt",
+      4.035215045323529
+    ],
+    [
+      "da",
+      4.0233845249015125
+    ],
+    [
+      "he",
+      4.0156526195685665
+    ],
+    [
+      "she",
+      3.6894985550144233
+    ],
+    [
+      "i_",
+      3.6653999646252124
+    ],
+    [
+      "later",
+      3.6312868876198126
+    ],
+    [
+      "too",
+      3.5864588160134936
+    ],
+    [
+      "lol",
+      3.5796295412377717
+    ],
+    [
+      "doing",
+      3.5080218672917898
+    ],
+    [
+      "already",
+      3.442546049833128
+    ],
+    [
+      "anything",
+      3.4369731149412903
+    ],
+    [
+      "going to",
+      3.422423953894193
+    ],
+    [
+      "come",
+      3.40697584556988
+    ],
+    [
+      "want to",
+      3.3178060384727948
+    ],
+    [
+      "ii",
+      3.2904209965189555
+    ],
+    [
+      "ask",
+      3.287718105713287
+    ],
+    [
+      "morning",
+      3.244744005628929
+    ]
+  ],
+  "false_positives": [
+    {
+      "text": "K k:) sms chat with me.",
+      "prob": 0.28755303245532854
+    },
+    {
+      "text": "Have you heard from this week?",
+      "prob": 0.29081550776727566
+    },
+    {
+      "text": "Waiting for your call.",
+      "prob": 0.3662387120160074
+    },
+    {
+      "text": "Hey...Great deal...Farm tour 9am to 5pm $95/pax, $50 deposit by 16 May",
+      "prob": 0.2794829555497916
+    },
+    {
+      "text": "Received, understood n acted upon!",
+      "prob": 0.6044574594619849
+    }
+  ],
+  "false_negatives": [
+    {
+      "text": "Hi if ur lookin 4 saucy daytime fun wiv busty married woman Am free all next week Chat now 2 sort time 09099726429 JANINExx Calls\u00e5\u00a31/minMobsmoreLKPOBOX177HP51FL",
+      "prob": 0.03434520479680381
+    },
+    {
+      "text": "ASKED 3MOBILE IF 0870 CHATLINES INCLU IN FREE MINS. INDIA CUST SERVs SED YES. L8ER GOT MEGA BILL. 3 DONT GIV A SHIT. BAILIFF DUE IN DAYS. I O \u00e5\u00a3250 3 WANT \u00e5\u00a3800",
+      "prob": 0.15528147972170564
+    },
+    {
+      "text": "Hi its LUCY Hubby at meetins all day Fri & I will B alone at hotel U fancy cumin over? Pls leave msg 2day 09099726395 Lucy x Calls\u00e5\u00a31/minMobsmoreLKPOBOX177HP51FL",
+      "prob": 0.017453684353912285
+    },
+    {
+      "text": "Missed call alert. These numbers called but left no message. 07008009200",
+      "prob": 0.04930567314863374
+    },
+    {
+      "text": "Babe: U want me dont u baby! Im nasty and have a thing 4 filthyguys. Fancy a rude time with a sexy bitch. How about we go slo n hard! Txt XXX SLO(4msgs)",
+      "prob": 0.002605687692280785
+    }
+  ]
+}
